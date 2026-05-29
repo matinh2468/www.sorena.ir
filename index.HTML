@@ -1,0 +1,754 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>فروشگاه میر جلیل هاشمی</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Vazirmatn',sans-serif;
+}
+
+body{
+background:#f4f5f7;
+color:#333;
+overflow-x:hidden;
+}
+
+/* HEADER */
+
+header{
+background:#fff;
+padding:18px 5%;
+display:flex;
+justify-content:space-between;
+align-items:center;
+position:sticky;
+top:0;
+z-index:999;
+border-bottom:1px solid #ececec;
+box-shadow:0 3px 15px rgba(0,0,0,0.05);
+}
+
+.logo{
+font-size:30px;
+font-weight:900;
+color:#222;
+}
+
+nav ul{
+display:flex;
+gap:28px;
+list-style:none;
+}
+
+nav a{
+text-decoration:none;
+color:#444;
+font-size:16px;
+font-weight:700;
+transition:0.3s;
+}
+
+nav a:hover{
+color:#0f9d58;
+}
+
+/* HERO */
+
+.hero{
+width:92%;
+height:420px;
+margin:25px auto;
+border-radius:35px;
+overflow:hidden;
+position:relative;
+background:#000;
+box-shadow:0 15px 40px rgba(0,0,0,0.10);
+}
+
+.slide{
+position:absolute;
+width:100%;
+height:100%;
+opacity:0;
+transition:1.5s ease;
+display:flex;
+align-items:center;
+justify-content:center;
+background:#000;
+}
+
+.slide.active{
+opacity:1;
+z-index:1;
+}
+
+.slide img{
+width:100%;
+height:100%;
+object-fit:contain;
+background:#000;
+}
+
+/* HERO CONTENT */
+
+.hero-content{
+position:absolute;
+bottom:25px;
+right:25px;
+left:25px;
+z-index:10;
+padding:20px;
+background:rgba(0,0,0,0.45);
+backdrop-filter:blur(5px);
+border-radius:20px;
+color:white;
+max-width:650px;
+}
+
+.hero-content h1{
+font-size:48px;
+font-weight:900;
+margin-bottom:14px;
+}
+
+.hero-content p{
+font-size:18px;
+line-height:2;
+}
+
+.hero-btn{
+margin-top:20px;
+padding:14px 30px;
+border:none;
+border-radius:12px;
+background:#0f9d58;
+color:white;
+font-size:16px;
+font-weight:800;
+cursor:pointer;
+transition:0.3s;
+}
+
+.hero-btn:hover{
+background:#0c7d46;
+transform:translateY(-3px);
+}
+
+/* SECTION */
+
+.section{
+width:90%;
+margin:70px auto;
+}
+
+.section-title{
+font-size:34px;
+font-weight:900;
+margin-bottom:30px;
+}
+
+/* AMAZING */
+
+.amazing{
+background:linear-gradient(135deg,#d32f2f,#8e0000);
+padding:35px;
+border-radius:28px;
+box-shadow:0 10px 30px rgba(211,47,47,0.2);
+}
+
+.scroll-products{
+display:flex;
+gap:22px;
+overflow-x:auto;
+padding-bottom:10px;
+scroll-behavior:smooth;
+scrollbar-width:none;
+}
+
+.scroll-products::-webkit-scrollbar{
+display:none;
+}
+
+/* CARD */
+
+.card{
+min-width:250px;
+background:white;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 6px 18px rgba(0,0,0,0.08);
+transition:0.3s;
+border:1px solid #ececec;
+}
+
+.card:hover{
+transform:translateY(-5px);
+}
+
+.card img{
+width:100%;
+height:200px;
+object-fit:cover;
+display:block;
+}
+
+.card-content{
+padding:18px;
+}
+
+.card h3{
+font-size:21px;
+margin-bottom:12px;
+}
+
+.price{
+font-size:24px;
+font-weight:900;
+color:#d32f2f;
+margin-bottom:15px;
+}
+
+.buy-btn{
+width:100%;
+padding:13px;
+border:none;
+border-radius:12px;
+background:#111;
+color:white;
+font-size:15px;
+font-weight:700;
+cursor:pointer;
+transition:0.3s;
+}
+
+.buy-btn:hover{
+background:#0f9d58;
+}
+
+/* FEATURES */
+
+.features{
+width:90%;
+margin:80px auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+}
+
+.feature{
+background:white;
+padding:35px;
+border-radius:25px;
+text-align:center;
+box-shadow:0 8px 18px rgba(0,0,0,0.05);
+transition:0.3s;
+}
+
+.feature:hover{
+transform:translateY(-5px);
+}
+
+.feature span{
+font-size:48px;
+display:block;
+margin-bottom:15px;
+}
+
+.feature h3{
+font-size:24px;
+margin-bottom:10px;
+}
+
+.feature p{
+color:#666;
+line-height:2;
+}
+
+/* COMMENTS */
+
+.comments{
+width:90%;
+margin:80px auto;
+}
+
+.comments-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:25px;
+}
+
+.comment-box{
+background:white;
+padding:30px;
+border-radius:25px;
+box-shadow:0 8px 20px rgba(0,0,0,0.05);
+border:1px solid #ececec;
+}
+
+.comment-box h4{
+font-size:22px;
+margin-bottom:12px;
+color:#0f9d58;
+}
+
+.comment-box p{
+line-height:2;
+color:#666;
+}
+
+.stars{
+color:#ffb400;
+font-size:20px;
+margin-bottom:15px;
+}
+
+/* INFO */
+
+.info-box{
+width:90%;
+margin:80px auto;
+background:white;
+padding:45px;
+border-radius:30px;
+box-shadow:0 8px 20px rgba(0,0,0,0.05);
+text-align:center;
+}
+
+.info-box h2{
+font-size:42px;
+margin-bottom:18px;
+}
+
+.info-box p{
+font-size:18px;
+line-height:2.2;
+color:#666;
+}
+
+/* FOOTER */
+
+footer{
+margin-top:90px;
+background:#111;
+color:white;
+padding-top:60px;
+}
+
+.footer-container{
+width:90%;
+margin:auto;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:40px;
+padding-bottom:45px;
+}
+
+.footer-box h3{
+font-size:28px;
+margin-bottom:18px;
+}
+
+.footer-box p{
+line-height:2.2;
+color:#ccc;
+}
+
+.footer-bottom{
+padding:22px;
+text-align:center;
+border-top:1px solid #333;
+color:#aaa;
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+header{
+flex-direction:column;
+gap:15px;
+}
+
+nav ul{
+gap:12px;
+flex-wrap:wrap;
+justify-content:center;
+}
+
+.logo{
+font-size:24px;
+}
+
+.hero{
+height:300px;
+width:95%;
+}
+
+.hero-content{
+right:12px;
+left:12px;
+bottom:12px;
+padding:14px;
+}
+
+.hero-content h1{
+font-size:28px;
+}
+
+.hero-content p{
+font-size:13px;
+line-height:1.9;
+}
+
+.hero-btn{
+width:100%;
+padding:12px;
+font-size:14px;
+}
+
+.section-title{
+font-size:26px;
+}
+
+.card{
+min-width:220px;
+}
+
+.card img{
+height:170px;
+}
+
+.info-box{
+padding:25px;
+}
+
+.info-box h2{
+font-size:30px;
+}
+
+.info-box p{
+font-size:15px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+<div class="logo">
+فروشگاه میر جلیل هاشمی
+</div>
+
+<nav>
+<ul>
+<li><a href="#">خانه</a></li>
+<li><a href="dastebandi.HTML">دسته بندی ها </a></li>
+<li><a href="#">شگفت انگیزها</a></li>
+<li><a href="#">تماس با ما</a></li>
+</ul>
+</nav>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero">
+
+<div class="slide active">
+<img src="014.png">
+</div>
+
+<div class="slide">
+<img src="015.png">
+</div>
+
+<div class="slide">
+<img src="013.png">
+</div>
+
+<div class="hero-content">
+
+<h1>
+فروشگاه میر جلیل هاشمی
+</h1>
+
+<p>
+بهترین برنج، حبوبات، تنقلات، شامپو و کالاهای سوپرمارکتی با قیمت مناسب
+</p>
+
+<button class="hero-btn">
+مشاهده محصولات
+</button>
+
+</div>
+
+</section>
+
+<!-- AMAZING -->
+
+<section class="section amazing">
+
+<h2 class="section-title" style="color:white">
+🔥 شگفت انگیز ها
+</h2>
+
+<div class="scroll-products">
+
+<div class="card">
+<img src="hashemi.jpg">
+<div class="card-content">
+<h3>برنج هاشمی ممتاز</h3>
+<div class="price">۵۰۰ هزار تومان</div>
+<button class="buy-btn">
+خرید حضوری
+</button>
+</div>
+</div>
+
+<div class="card">
+<img src="HED.jpg">
+<div class="card-content">
+<h3>شامپو هد اند شولدر</h3>
+<div class="price">550 هزار تومان</div>
+<button class="buy-btn">
+خرید حضوری
+</button>
+</div>
+</div>
+
+<div class="card">
+<img src="CH PCH.jpg">
+<div class="card-content">
+<h3>پچ پچ شکلاتی</h3>
+<div class="price">25 هزار تومان</div>
+<button class="buy-btn">
+خرید حضوری
+</button>
+</div>
+</div>
+
+<div class="card">
+<img src="POLAK.jpg">
+<div class="card-content">
+<h3>تن ماهی پولک</h3>
+<div class="price">169 هزار تومان</div>
+<button class="buy-btn">
+خرید حضوری
+</button>
+</div>
+</div>
+
+</div>
+
+</section>
+
+<!-- FEATURES -->
+
+<section class="features">
+
+<div class="feature">
+<span>🌾</span>
+<h3>برنج با کیفیت</h3>
+<p>
+ارائه بهترین برنج هاشمی، عنبربو و نیم دانه
+</p>
+</div>
+
+<div class="feature">
+<span>🛒</span>
+<h3>تنوع محصولات</h3>
+<p>
+انواع کالاهای سوپرمارکتی و تنقلات تازه
+</p>
+</div>
+
+<div class="feature">
+<span>🔥</span>
+<h3>قیمت مناسب</h3>
+<p>
+بهترین قیمت برای خرید حضوری مشتریان عزیز
+</p>
+</div>
+
+<div class="feature">
+<span>⭐</span>
+<h3>رضایت مشتری</h3>
+<p>
+کیفیت بالا و رضایت خریداران فروشگاه
+</p>
+</div>
+
+</section>
+
+<!-- COMMENTS -->
+
+<section class="comments">
+
+<h2 class="section-title">
+💬 نظرات مشتریان
+</h2>
+
+<div class="comments-grid">
+
+<div class="comment-box">
+<div class="stars">
+★★★★★
+</div>
+<h4>
+علی محمدی
+</h4>
+<p>
+برنج هاشمی خیلی با کیفیت بود و قیمتش هم عالی بود.
+</p>
+</div>
+
+<div class="comment-box">
+<div class="stars">
+★★★★★
+</div>
+<h4>
+رضا احمدی
+</h4>
+<p>
+محصولات فروشگاه تازه و با کیفیت هستن، کاملا راضی بودم.
+</p>
+</div>
+
+<div class="comment-box">
+<div class="stars">
+★★★★★
+</div>
+<h4>
+مهدی رضایی
+</h4>
+<p>
+شامپو و تنقلات قیمت مناسبی داشتن و برخورد عالی بود.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<!-- INFO -->
+
+<section class="info-box">
+
+<h2>
+کیفیت عالی محصولات
+</h2>
+
+<p>
+فروشگاه میر جلیل هاشمی ارائه دهنده بهترین برنج، حبوبات، تنقلات و کالاهای سوپرمارکتی با قیمت مناسب و کیفیت بالا
+</p>
+
+</section>
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="footer-container">
+
+<div class="footer-box">
+
+<h3>
+فروشگاه میر جلیل هاشمی
+</h3>
+
+<p>
+عرضه کننده انواع کالاهای سوپرمارکتی، برنج، حبوبات و محصولات روزمره
+</p>
+
+</div>
+
+<div class="footer-box">
+
+<h3>
+ارتباط با ما
+</h3>
+
+<p>
+📞 09144549172
+</p>
+
+<p>
+📍 فروشگاه میر جلیل هاشمی
+</p>
+
+</div>
+
+</div>
+
+<div class="footer-bottom">
+
+© تمامی حقوق متعلق به فروشگاه میر جلیل هاشمی می‌باشد
+
+</div>
+
+</footer>
+
+<script>
+
+/* SLIDER */
+
+const slides = document.querySelectorAll('.slide');
+
+let current = 0;
+
+setInterval(()=>{
+
+slides[current].classList.remove('active');
+
+current = (current + 1) % slides.length;
+
+slides[current].classList.add('active');
+
+},5000);
+
+/* AUTO SCROLL */
+
+const scrollBox = document.querySelector('.scroll-products');
+
+let scrollAmount = 0;
+
+setInterval(()=>{
+
+scrollAmount += 270;
+
+if(scrollAmount > scrollBox.scrollWidth - scrollBox.clientWidth){
+
+scrollAmount = 0;
+
+}
+
+scrollBox.scrollTo({
+left:scrollAmount,
+behavior:'smooth'
+});
+
+},3500);
+
+</script>
+
+</body>
+</html>
